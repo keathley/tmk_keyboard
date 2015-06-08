@@ -160,7 +160,7 @@ static matrix_row_t read_cols(void)
            (PINB&(1<<2) ? 0 : (1<<8)) |
            (PINB&(1<<1) ? 0 : (1<<9)) |
            (PINB&(1<<0) ? 0 : (1<<10)) ;
-#elseif PCBFLIP
+#elif PCBFLIP
     return (PINF&(1<<6) ? 0 : (1<<10)) |
            (PINF&(1<<5) ? 0 : (1<<9)) |
            (PINF&(1<<4) ? 0 : (1<<8)) |
