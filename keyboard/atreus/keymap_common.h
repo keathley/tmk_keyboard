@@ -71,7 +71,7 @@ extern const uint16_t fn_actions[];
                            KC_FN6, KC_FN5, KC_LALT, KC_LSFT, KC_BSPC, KC_LGUI, KC_FN4, KC_SPC, KC_FN2, KC_NO, KC_NO, KC_NO)
 
 #define PANE_LAYER KEYMAP(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, \
-                          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
+                          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, PANE(KC_M), KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, PANE(KC_LEFT), PANE(KC_DOWN), PANE(KC_UP), PANE(KC_RIGHT), KC_NO, \
                           KC_FN6, KC_FN5, KC_LALT, KC_LSFT, KC_BSPC, KC_LGUI, KC_FN4, KC_SPC, KC_FN2, KC_NO, KC_NO, KC_NO)
 
