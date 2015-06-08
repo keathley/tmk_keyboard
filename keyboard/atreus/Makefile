@@ -149,4 +149,3 @@ include $(TOP_DIR)/rules.mk
 
 udev:
 	cp a-star.rules /etc/udev/rules.d/
-
