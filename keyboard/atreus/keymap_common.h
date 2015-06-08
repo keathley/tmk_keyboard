@@ -33,6 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define CTRL(key) ACTION(ACT_MODS, (MOD_LCTL << 8) | (key))
 #define ALT(key) ACTION(ACT_MODS, (MOD_LALT << 8) | (key))
 #define GUI(key) ACTION(ACT_MODS, (MOD_LGUI << 8) | (key))
+#define PANE(key) ACTION_MODS_KEY(MOD_LGUI | MOD_LALT | MOD_LCTL, (key))
 
 extern const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS];
 extern const uint16_t fn_actions[];
@@ -51,9 +52,9 @@ extern const uint16_t fn_actions[];
 }
 
 #define FN_LAYER   KEYMAP(SHIFT(KC_1), SHIFT(KC_2), SHIFT(KC_LBRC), SHIFT(KC_RBRC), SHIFT(KC_BSLS), \
-                          KC_PGUP, KC_7, KC_8, KC_9, SHIFT(KC_8),       \
+                          SHIFT(CTRL(KC_UP)), KC_7, KC_8, KC_9, SHIFT(KC_8),       \
                           SHIFT(KC_3), SHIFT(KC_4), SHIFT(KC_9), SHIFT(KC_0), KC_GRAVE, \
-                          KC_PGDN, KC_4, KC_5, KC_6, SHIFT(KC_EQUAL),   \
+                          SHIFT(CTRL(KC_DOWN)), KC_4, KC_5, KC_6, SHIFT(KC_EQUAL),   \
                           SHIFT(KC_5), SHIFT(KC_6), KC_LBRC, KC_RBRC, SHIFT(KC_GRAVE), \
                           SHIFT(KC_7), KC_1, KC_2, KC_3, KC_BSLS,       \
                           KC_FN1, SHIFT(KC_INS), KC_LALT, KC_LSFT, KC_BSPC, KC_LGUI, KC_FN4, \
@@ -63,6 +64,16 @@ extern const uint16_t fn_actions[];
                          KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, KC_PGDN, KC_DOWN, KC_F4, KC_F5, KC_F6, KC_F11, \
                          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F1, KC_F2, KC_F3, KC_F12, \
                          KC_NO, KC_NO, KC_LALT, KC_LSFT, KC_BSPC, KC_LGUI, KC_FN4, KC_SPC, KC_FN2, KC_NO, KC_NO, KC_FN3)
+
+#define MEDIA_LAYER KEYMAP(KC_SLEP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MUTE, KC_VOLD, KC_VOLU, \
+                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, \
+                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+                           KC_FN6, KC_FN5, KC_LALT, KC_LSFT, KC_BSPC, KC_LGUI, KC_FN4, KC_SPC, KC_FN2, KC_NO, KC_NO, KC_NO)
+
+#define PANE_LAYER KEYMAP(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, \
+                          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
+                          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, PANE(KC_LEFT), PANE(KC_DOWN), PANE(KC_UP), PANE(KC_RIGHT), KC_NO, \
+                          KC_FN6, KC_FN5, KC_LALT, KC_LSFT, KC_BSPC, KC_LGUI, KC_FN4, KC_SPC, KC_FN2, KC_NO, KC_NO, KC_NO)
 
 enum function_id {
   BOOTLOADER,
